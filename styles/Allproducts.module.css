@@ -1,0 +1,40 @@
+.container {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+  text-align: center;
+  font-size: 50px;
+  background: linear-gradient(90deg, #ae5c5c, #7679d1);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+}
+.desc {
+    font-size: 20px;
+    color: #444;
+    width: 70%;
+}
+
+.wrapper {
+    width: 90%;
+    display: flex;
+    align-items: center;
+/* cursor: pointer; */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+      text-align: center;
+    }
+  
+    .desc {
+      width: 90%;
+      text-align: center;
+    }
+  }

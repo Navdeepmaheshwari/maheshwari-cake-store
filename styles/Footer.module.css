@@ -1,0 +1,76 @@
+.container {
+    height: calc(100vh-100px);
+    background-color: rgb(42, 42, 42);
+    display: flex;
+    
+}
+
+.item {
+    flex: 2;
+    position: relative;
+    display: flex;
+}
+
+.item:last-child {
+    flex: 1;
+}
+
+.card {
+    flex: 1;
+    padding: 30px 20px;
+
+}
+
+.title {
+    font-size: 18px;
+    color: rgb(155, 113, 41);
+}
+
+.text {
+    color: white;
+    font-size: 14px;
+}
+
+.slogan {
+    color: rgb(155, 113, 41);
+    font-size: 22px;
+    width: 91%;
+}
+@media screen and (max-width: 780px){
+    .item:last-child {
+        display: none;
+    }
+
+}
+@media screen and (max-width: 480px) {
+    .container {
+        height: auto;
+        text-align: center;
+    }
+
+    .item:last-child {
+        display: none;
+    }
+
+    .card {
+        padding: 10px 10px;
+    }
+
+    .item {
+        flex-direction: column;
+    }
+
+    .slogan {
+        margin: 0 auto;
+        font-size: 18px;
+
+    }
+
+    .title {
+        font-size: 15px;
+    }
+
+    .text {
+        font-size: 13px;
+    }
+}
