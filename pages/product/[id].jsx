@@ -5,6 +5,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/cartSlice";
 const server = process.env.URL || "http://localhost:3000";
+
 const Product = ({ cake }) => {
   const [size, setSize] = useState(0);
   const [price, setPrice] = useState(cake.prices[0]);
