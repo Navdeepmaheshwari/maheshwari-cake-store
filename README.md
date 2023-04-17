@@ -1,4 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Maheshwari-Cake-Store
+
+## Deployed Link
+
+```bash
+    https://cakestore-navdeepmaheshwari.vercel.app/
+```
+
+## [Deployed - App](https://cakestore-navdeepmaheshwari.vercel.app/)
+
+### Homepage
+<p align="center">
+<img src="./img/home.png"/>
+</p>
+
+### Products
+<p align="center">
+<img src="./img/products.png"/>
+</p>
+
+### Product Page
+<p align="center">
+<img src="./img/product.png"/>
+</p>
+
+### Cart
+<p align="center">
+<img src="./img/cart.png"/>
+</p>
+
+### Admin Login
+<p align="center">
+<img src="./img/login.png"/>
+</p>
+
+### Admin Dashboard
+<p align="center">
+<img src="./img/dashboard.png"/>
+</p>
 
 ## Getting Started
 
