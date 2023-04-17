@@ -9,8 +9,8 @@ const Product = ({ cake }) => {
   const [size, setSize] = useState(0);
   const [price, setPrice] = useState(cake.prices[0]);
   const [quantity, setQuantity] = useState(1);
-const [extras, setExtras] = useState([]);
-const dispatch=useDispatch();
+  const [extras, setExtras] = useState([]);
+  const dispatch = useDispatch();
   const changePrice = (number) => {
     setPrice(price + number);
   };
@@ -23,18 +23,17 @@ const dispatch=useDispatch();
 
   const handleClick = (e, option) => {
     const checked = e.target.checked;
-    if(checked){
+    if (checked) {
       changePrice(option.price);
-      setExtras((prev)=>[...prev, option])
-    }
-    else{
+      setExtras((prev) => [...prev, option]);
+    } else {
       changePrice(-option.price);
-      setExtras(extras.filter((extra)=>extra._id !== option._id))
+      setExtras(extras.filter((extra) => extra._id !== option._id));
     }
   };
-const handleCart=()=>{
-  dispatch(addProduct({...cake,extras,price,quantity}))
-}
+  const handleCart = () => {
+    dispatch(addProduct({ ...cake, extras, price, quantity }));
+  };
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -45,9 +44,7 @@ const handleCart=()=>{
       <div className={styles.right}>
         <h1 className={styles.title}>{cake.title}</h1>
         <span className={styles.price}>&#x20b9;{price}</span>
-        <p className={styles.desc}>
-        {cake.desc}
-        </p>
+        <p className={styles.desc}>{cake.desc}</p>
         <h3 className={styles.choose}>Choose the Size</h3>
         <div className={styles.sizes}>
           <div className={styles.size} onClick={() => handleSize(0)}>
@@ -77,12 +74,17 @@ const handleCart=()=>{
               <label htmlFor={option.text}>{option.text}</label>
             </div>
           ))}
-
-          
         </div>
         <div className={styles.add}>
-          <input type="number" onChange={(e)=>setQuantity(e.target.value)} defaultValue={1} className={styles.quantity} />
-          <button className={styles.button} onClick={handleCart}>Add to Cart</button>
+          <input
+            type="number"
+            onChange={(e) => setQuantity(e.target.value)}
+            defaultValue={1}
+            className={styles.quantity}
+          />
+          <button className={styles.button} onClick={handleCart}>
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
@@ -90,9 +92,7 @@ const handleCart=()=>{
 };
 
 export const getServerSideProps = async ({ params }) => {
-  const res = await axios.get(
-    `${server}/api/products/${params.id}`
-  );
+  const res = await axios.get(`${server}/api/products/${params.id}`);
   return {
     props: {
       cake: res.data,

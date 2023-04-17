@@ -5,7 +5,7 @@ import Cakelist from "../Component/Cakelist";
 import Slider from "../Component/Slider";
 import styles from "../styles/Home.module.css";
 const server = process.env.URL || "http://localhost:3000";
-export default function Home({cakeList,admin}) {
+export default function Home({ cakeList, admin }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -15,13 +15,12 @@ export default function Home({cakeList,admin}) {
       </Head>
       <Slider />
       {/* {admin && <span>Hello</span>} */}
-      <Cakelist cakeList={cakeList}/>
+      <Cakelist cakeList={cakeList} />
     </div>
   );
 }
 
-export const getServerSideProps= async (ctx)=>{
-
+export const getServerSideProps = async (ctx) => {
   const myCookie = ctx.req?.cookies || "";
   let admin = false;
 
@@ -29,11 +28,11 @@ export const getServerSideProps= async (ctx)=>{
     admin = true;
   }
 
-  const res= await axios.get(`${server}/api/products`);
-  return{
-    props:{
-      cakeList:res.data,
+  const res = await axios.get(`${server}/api/products`);
+  return {
+    props: {
+      cakeList: res.data,
       admin,
-    }
-  }
-}
+    },
+  };
+};
