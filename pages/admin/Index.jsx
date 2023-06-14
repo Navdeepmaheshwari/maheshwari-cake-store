@@ -19,7 +19,7 @@ const Index = ({ orders, products }) => {
   const [close, setClose] = useState(true);
 
   const handlelogout = () => {
-    // cookie=" ",
+
     router.push(`${server}/admin/login`);
   };
   const handleDelete = async (id) => {
@@ -146,7 +146,7 @@ export const getServerSideProps = async (ctx) => {
     return {
       redirect: {
         destination:
-         `${server}/admin/login`,
+          `${server}/admin/login`,
         permanent: false,
       },
     };

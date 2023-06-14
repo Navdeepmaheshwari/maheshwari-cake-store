@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import styles from "../../styles/Login.module.css";
 const server = process.env.URL || "http://localhost:3000";
+
 const Login = () => {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
@@ -15,8 +16,7 @@ const Login = () => {
         username,
         password,
       });
-      router.push(`/admin/Index`);
-      setIsLoggedin(true);
+      router.push("/admin/Index");
     } catch (err) {
       setError(true);
     }
